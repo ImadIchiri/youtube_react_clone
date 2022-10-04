@@ -1,0 +1,9 @@
+.contentContainer {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  overflow-y: hidden;
+  background-color: #202020;
+}

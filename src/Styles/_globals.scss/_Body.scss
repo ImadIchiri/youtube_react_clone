@@ -1,0 +1,8 @@
+@use "Variables" as v;
+
+body {
+  font-family: v.$mainFont;
+  line-height: 1.5;
+  overflow-y: hidden;
+  background-color: #333;
+}

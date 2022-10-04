@@ -1,0 +1,686 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 67px 1fr;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  overflow-y: hidden;
+  background-color: #333;
+}
+
+.Header {
+  position: relative;
+  z-index: 999;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+  padding: 0.2rem 0;
+}
+.Header .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Header .container svg {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.Header .container .leftSide {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+.Header .container .leftSide .toggleMenu {
+  margin-right: 1.2rem;
+}
+.Header .container .leftSide .Logo {
+  width: 110px;
+  display: block;
+}
+.Header .container .searchForm {
+  position: relative;
+  z-index: 999;
+  flex: 1;
+  display: block;
+}
+.Header .container .searchForm label {
+  position: absolute;
+  visibility: hidden;
+}
+.Header .container .searchForm .inputHolder {
+  position: relative;
+  max-width: 600px;
+  margin: 0px auto;
+}
+@media (max-width: 540px) {
+  .Header .container .searchForm .inputHolder {
+    transform: translateY(30%);
+  }
+}
+.Header .container .searchForm .inputHolder .arrowLeft {
+  background-color: #535353;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  left: -55px;
+  height: 45px;
+  width: 55px;
+  border: 2px solid #777;
+  cursor: pointer;
+}
+.Header .container .searchForm .inputHolder input[type=text] {
+  height: 45px;
+  width: calc(100% - 55px);
+  padding: 0.5rem 30px 0.5rem 1rem;
+  border: 2px solid #777;
+  outline: none;
+  color: #ddd;
+  background-color: #000;
+  font-size: 1.1rem;
+}
+.Header .container .searchForm .inputHolder input[type=text]:focus {
+  border-color: #00f;
+}
+.Header .container .searchForm .inputHolder input[type=text]:focus + .Delete {
+  display: grid;
+}
+@media (max-width: 540px) {
+  .Header .container .searchForm .inputHolder input[type=text] {
+    width: calc(100% - 110px); /* calc(100% - 55px + 55px)    */
+  }
+}
+.Header .container .searchForm .inputHolder .Delete {
+  position: absolute;
+  z-index: 99;
+  height: 42px;
+  width: 30px;
+  z-index: 99;
+  top: 50%;
+  right: 58px;
+  transform: translateY(-50%);
+  display: none;
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+  font-weight: 100;
+  font-size: 1.5rem;
+  line-height: 0;
+  color: #eee;
+  cursor: pointer;
+}
+@media (max-width: 540px) {
+  .Header .container .searchForm .inputHolder .Delete {
+    right: 111px;
+  }
+}
+.Header .container .searchForm .inputHolder .searchIcon {
+  background-color: #535353;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 45px;
+  width: 55px;
+  border: 2px solid #777;
+}
+@media (max-width: 540px) {
+  .Header .container .searchForm .inputHolder .searchIcon {
+    right: 55px;
+  }
+}
+@media (max-width: 540px) {
+  .Header .container .searchForm {
+    background-color: #333;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 55px;
+    width: 100%;
+    height: 100%;
+  }
+}
+.Header .container .rightSide {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+.Header .container .rightSide button {
+  margin-top: 2px;
+  margin-right: 1.2rem;
+}
+.Header .container .rightSide #openSearch {
+  border: none;
+  background-color: transparent;
+}
+.Header .container .rightSide .Avatar {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  scale: 0.8;
+}
+.Header .container .rightSide .Avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* ================= Start Icon Of Uploading Videos ================= */
+.videoContainer {
+  position: relative;
+  line-height: 1;
+}
+.videoContainer .UploadVideoBtn svg {
+  font-size: 2rem !important;
+}
+.videoContainer .videosNav {
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: 0;
+  background-color: #212121;
+  min-width: 115px;
+  border-left: 1px solid #777;
+}
+.videoContainer .videosNav a {
+  display: block;
+  color: #ddd;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+  border-left: 2px solid transparent;
+}
+.videoContainer .videosNav a:hover {
+  border-color: #ddd;
+}
+
+/* ================= End Icon Of Uploading Videos ================= */
+/* ================= Start Icon Of Notifications ================= */
+.NotificationsContainer {
+  position: relative;
+  line-height: 1;
+}
+.NotificationsContainer .Notifications {
+  position: absolute;
+  right: -60px;
+  top: 50px;
+  width: 390px;
+  background-color: #222222;
+  border: 1px solid #777;
+  padding: 0 0 1rem;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+.NotificationsContainer .Notifications::-webkit-scrollbar {
+  width: 10px;
+}
+.NotificationsContainer .Notifications::-webkit-scrollbar-track {
+  background-color: #333;
+}
+.NotificationsContainer .Notifications::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.NotificationsContainer .Notifications:hover::-webkit-scrollbar-thumb {
+  background-color: rgb(168, 168, 168);
+}
+.NotificationsContainer .Notifications .NotificationsHeader {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+  background-color: #222222;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem {
+  position: relative;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  display: flex;
+  transition: 0.15s ease-in-out;
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem:hover {
+  background-color: rgb(90, 90, 90);
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem::before {
+  position: absolute;
+  content: "";
+  top: 35px;
+  left: 0.3rem;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #3ea6ff;
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem .text {
+  color: #ddd;
+  font-weight: 100;
+  margin: 0 0.5rem;
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem .text .title {
+  width: 180px;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+  line-height: 1.3;
+  word-spacing: 1px;
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem .text .uploadTime {
+  font-weight: 300;
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem .ItemLogo {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem .ItemThumbnail {
+  width: 100px;
+}
+.NotificationsContainer .Notifications .NotificationsList .NotificationsItem .ItemThumbnail img {
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/* ================= End Icon Of Notifications ================= */
+.bodyContainer {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 67px);
+  min-height: 600px;
+  max-height: calc(100vh - 67px);
+  display: flex;
+  overflow-y: hidden;
+}
+
+.navBarLeft {
+  width: 280px;
+  max-width: 280px;
+  background-color: #212121;
+  overflow-y: scroll;
+}
+.navBarLeft::-webkit-scrollbar {
+  width: 8px;
+}
+.navBarLeft::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.navBarLeft::-webkit-scrollbar-thumb {
+  border-radius: 5rem;
+  background-color: transparent;
+}
+.navBarLeft:hover::-webkit-scrollbar-track {
+  background-color: #333;
+}
+.navBarLeft:hover::-webkit-scrollbar-thumb {
+  border-radius: 5rem;
+  background-color: #999;
+}
+.navBarLeft > article {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #383838;
+  margin: 0.5rem 0;
+}
+.navBarLeft > article .articleTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 11%;
+  text-transform: uppercase;
+}
+.navBarLeft > article .navLinks,
+.navBarLeft > article .youtubeLinks {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 5% 0.5rem 10%;
+}
+.navBarLeft > article .navLinks a,
+.navBarLeft > article .youtubeLinks a {
+  margin: 0 0.5rem;
+  color: #999999;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.navBarLeft .card {
+  padding: 0.6rem 10%;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.navBarLeft .card.active {
+  background-color: #383838;
+}
+.navBarLeft .card:hover {
+  background-color: #383838;
+}
+.navBarLeft .card svg {
+  font-size: 1.4rem;
+}
+.navBarLeft .card span {
+  margin-left: 1rem;
+  line-height: 1;
+  font-weight: 400;
+}
+.navBarLeft .subscriptions .card {
+  font-size: 0.9rem;
+}
+.navBarLeft .subscriptions .card svg {
+  margin-bottom: -2px;
+}
+.navBarLeft .subscriptions .channelCard {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 10%;
+  cursor: pointer;
+}
+.navBarLeft .subscriptions .channelCard:hover {
+  background-color: #383838;
+}
+.navBarLeft .subscriptions .channelCard img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.navBarLeft .subscriptions .channelCard h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.navBarLeft .copyright {
+  color: #999999;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  padding-left: 10%;
+}
+@media (max-width: 1300px) {
+  .navBarLeft {
+    position: absolute;
+    z-index: 999;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 280px;
+  }
+}
+
+.shortAside {
+  width: 80px;
+  color: #fff;
+  background-color: #212121;
+}
+.shortAside .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+.shortAside .card:hover {
+  background-color: #383838;
+}
+.shortAside .card svg {
+  font-size: 1.5rem;
+}
+.shortAside .card span {
+  margin-top: 0.25rem;
+  font-size: 0.65rem;
+}
+@media (max-width: 780px) {
+  .shortAside {
+    display: none;
+  }
+}
+
+.contentContainer {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  overflow-y: hidden;
+  background-color: #202020;
+}
+
+.contentHeader {
+  position: relative;
+  background-color: #202020;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+.contentHeader::-webkit-scrollbar {
+  display: none;
+}
+.contentHeader .arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 42px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: #202020;
+}
+.contentHeader .arrowBtn.arrowLeft {
+  left: 0;
+  box-shadow: 25px 0px 15px #202020;
+}
+.contentHeader .arrowBtn.arrowRight {
+  right: 0;
+  box-shadow: -25px 0px 15px #202020;
+}
+.contentHeader .categoriesContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  padding: 0 67px;
+}
+.contentHeader .categoriesContainer::-webkit-scrollbar {
+  display: none;
+}
+.contentHeader .categoryItem {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  color: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 5rem;
+  padding: 0.2rem 0.75rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+.contentHeader .categoryItem:hover {
+  background-color: rgb(90, 90, 90);
+}
+.contentHeader .categoryItem.active {
+  color: #333;
+  background-color: #eee;
+}
+
+.content {
+  width: 100%;
+  overflow-y: scroll;
+}
+.content::-webkit-scrollbar {
+  width: 10px;
+}
+.content::-webkit-scrollbar-track {
+  background-color: #333;
+}
+.content::-webkit-scrollbar-thumb {
+  border-radius: 5rem;
+  background-color: #ddd;
+}
+.content .content_wrapper {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+.content .content_wrapper .test {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.videoCard {
+  position: relative;
+  z-index: 9;
+  width: 100%;
+  color: #fff;
+  background-color: #202020;
+  cursor: pointer;
+  transition: scale 0.3s ease-in-out;
+}
+.videoCard .imageThumbnail {
+  position: relative;
+  width: 100%;
+  min-height: 160px;
+  margin-bottom: 0.75rem;
+}
+.videoCard .imageThumbnail img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.videoCard .imageThumbnail .time {
+  position: absolute;
+  z-index: 9;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+}
+.videoCard .textContainer {
+  display: flex;
+}
+.videoCard .textContainer img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.videoCard .textContainer .text .videoTitle {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.videoCard .textContainer .text .channelName {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: rgb(190, 190, 190);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.videoCard .textContainer .text .channelName:hover {
+  color: #fff;
+}
+.videoCard .textContainer .text .textBottom {
+  line-height: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.videoCard .textContainer .text .textBottom span {
+  color: rgb(190, 190, 190);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+.videoCard .textContainer .text .textBottom span:nth-of-type(2) {
+  margin-left: 0.75rem;
+  position: relative;
+}
+.videoCard .textContainer .text .textBottom span:nth-of-type(2)::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -0.4rem;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background-color: rgb(190, 190, 190);
+}/*# sourceMappingURL=App.css.map */

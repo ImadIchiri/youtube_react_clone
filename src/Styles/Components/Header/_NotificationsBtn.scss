@@ -1,0 +1,116 @@
+/* ================= Start Icon Of Notifications ================= */
+.NotificationsContainer {
+  position: relative;
+  line-height: 1;
+
+  .Notifications {
+    position: absolute;
+    right: -60px;
+    top: 50px;
+    width: 390px;
+    background-color: #222222;
+    border: 1px solid #777;
+    padding: 0 0 1rem;
+    max-height: 600px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #333;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background-color: rgb(168, 168, 168);
+      }
+    }
+
+    .NotificationsHeader {
+      position: sticky;
+      z-index: 99;
+      top: 0;
+      left: 0;
+      padding: 1.5rem 1.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      color: #fff;
+      background-color: #222222;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .NotificationsList {
+      .NotificationsItem {
+        position: relative;
+        padding: 0.75rem 1rem;
+        margin: 1rem 0;
+        display: flex;
+        transition: 0.15s ease-in-out;
+
+        &:hover {
+          background-color: rgb(90, 90, 90);
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 35px;
+          left: 0.3rem;
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background-color: #3ea6ff;
+        }
+
+        .text {
+          color: #ddd;
+          font-weight: 100;
+          margin: 0 0.5rem;
+
+          .title {
+            width: 180px;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            line-height: 1.3;
+            word-spacing: 1px;
+          }
+
+          .uploadTime {
+            font-weight: 300;
+          }
+        }
+
+        .ItemLogo {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+
+        .ItemThumbnail {
+          width: 100px;
+
+          img {
+            width: 100px;
+            object-fit: cover;
+          }
+        }
+
+        &:nth-of-type(1) {
+          //   add a dot before it
+        }
+      }
+    }
+  }
+}
+/* ================= End Icon Of Notifications ================= */

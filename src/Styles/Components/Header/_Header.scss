@@ -1,0 +1,197 @@
+@use "../../_globals.scss/Variables" as v;
+
+$inputHeight: 45px;
+
+.Header {
+  position: relative;
+  z-index: 999;
+  min-width: fit-content;
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+  padding: 0.2rem 0;
+
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .leftSide {
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+
+      .toggleMenu {
+        margin-right: 1.2rem;
+      }
+
+      .Logo {
+        width: 110px;
+        display: block;
+      }
+    }
+
+    .searchForm {
+      position: relative;
+      z-index: 999;
+      flex: 1;
+      display: block;
+
+      label {
+        position: absolute;
+        visibility: hidden;
+      }
+
+      .inputHolder {
+        position: relative;
+        max-width: 600px;
+        margin: 0px auto;
+
+        @media (max-width: 540px) {
+          & {
+            transform: translateY(30%);
+          }
+        }
+
+        .arrowLeft {
+          background-color: #535353;
+          display: grid;
+          place-items: center;
+          position: absolute;
+          top: 0;
+          left: -55px;
+          height: $inputHeight;
+          width: 55px;
+          border: 2px solid #777;
+          cursor: pointer;
+
+          //   @media (max-width: 540px) {
+          //     & {
+          //       display: grid;
+          //     }
+          //   }
+        }
+
+        input[type="text"] {
+          height: $inputHeight;
+          width: calc(100% - 55px);
+          padding: 0.5rem 30px 0.5rem 1rem;
+          border: 2px solid #777;
+          outline: none;
+          color: #ddd;
+          background-color: #000;
+          font-size: 1.1rem;
+
+          &:focus {
+            border-color: #00f;
+
+            + .Delete {
+              display: grid;
+            }
+          }
+
+          @media (max-width: 540px) {
+            & {
+              width: calc(100% - 110px); /* calc(100% - 55px + 55px)    */
+            }
+          }
+        }
+
+        .Delete {
+          position: absolute;
+          z-index: 99;
+          height: calc($inputHeight - 3px);
+          width: 30px;
+          z-index: 99;
+          top: 50%;
+          right: 58px;
+          transform: translateY(-50%);
+          display: none;
+          display: grid;
+          place-items: center;
+          background-color: transparent;
+          font: {
+            weight: 100;
+            size: 1.5rem;
+          }
+          line-height: 0;
+          color: #eee;
+          cursor: pointer;
+
+          @media (max-width: 540px) {
+            & {
+              right: 111px;
+            }
+          }
+        }
+
+        .searchIcon {
+          background-color: #535353;
+          display: grid;
+          place-items: center;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          height: $inputHeight;
+          width: 55px;
+          border: 2px solid #777;
+
+          @media (max-width: 540px) {
+            & {
+              right: 55px;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 540px) {
+        & {
+          background-color: #333;
+          position: absolute;
+          z-index: 99;
+          top: 0;
+          left: 55px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .rightSide {
+      margin-left: 1rem;
+      display: flex;
+      align-items: center;
+
+      button {
+        margin-top: 2px;
+        margin-right: 1.2rem;
+      }
+
+      #openSearch {
+        border: none;
+        background-color: transparent;
+      }
+
+      .Avatar {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        scale: 0.8;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

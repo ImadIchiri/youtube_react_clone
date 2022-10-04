@@ -1,0 +1,25 @@
+@use "_globals.scss/initialization";
+
+@use "_globals.scss/Root";
+
+@use "_globals.scss/Container";
+
+@use "_globals.scss/Body";
+
+@use "Components/Header/Header";
+
+@use "Components/Header/UploadVideoBtn";
+
+@use "Components/Header/NotificationsBtn";
+
+@use "Components/BodyContainer/BodyContainer";
+
+@use "Components/BodyContainer/NavBarLeft/NavBarLeft";
+
+@use "Components/BodyContainer/ContentContainer/ContentContainer";
+
+@use "Components/BodyContainer/ContentContainer/ContentHeader";
+
+@use "Components/BodyContainer/ContentContainer/Content";
+
+@use "Components/BodyContainer/ContentContainer/VideoCard";

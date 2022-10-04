@@ -1,0 +1,162 @@
+.navBarLeft {
+  width: 280px;
+  max-width: 280px;
+  background-color: #212121;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5rem;
+    background-color: transparent;
+  }
+  &:hover {
+    &::-webkit-scrollbar-track {
+      background-color: #333;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5rem;
+      background-color: #999;
+    }
+  }
+
+  & > article {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #383838;
+    margin: 0.5rem 0;
+
+    .articleTitle {
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba($color: #fff, $alpha: 0.8);
+      padding: 0.5rem 11%;
+      text-transform: uppercase;
+    }
+
+    .navLinks,
+    .youtubeLinks {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0.5rem 5% 0.5rem 10%;
+
+      a {
+        margin: 0 0.5rem;
+        color: #999999;
+        font-weight: 500;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .card {
+    padding: 0.6rem 10%;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+
+    &.active {
+      background-color: #383838;
+    }
+
+    &:hover {
+      background-color: #383838;
+    }
+
+    svg {
+      font-size: 1.4rem;
+    }
+
+    span {
+      margin-left: 1rem;
+      line-height: 1;
+      font-weight: 400;
+    }
+  }
+
+  .subscriptions {
+    .card {
+      font-size: 0.9rem;
+
+      svg {
+        margin-bottom: -2px;
+      }
+    }
+
+    .channelCard {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 10%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #383838;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+
+      h3 {
+        color: #fff;
+        font-weight: 400;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .copyright {
+    color: #999999;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    padding-left: 10%;
+  }
+
+  @media (max-width: 1300px) {
+    position: absolute;
+    z-index: 999;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 280px;
+  }
+}
+
+.shortAside {
+  width: 80px;
+  color: #fff;
+  background-color: #212121;
+
+  .card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #383838;
+    }
+
+    svg {
+      font-size: 1.5rem;
+    }
+
+    span {
+      margin-top: 0.25rem;
+      font-size: 0.65rem;
+    }
+  }
+
+  @media (max-width: 780px) {
+    display: none;
+  }
+}
