@@ -2,12 +2,28 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Categories from "../../../data/Content/Categories.json";
 
 function ContentHeader() {
+  const scrollValue = 500;
+
+  const leftArrow = () => {
+    const testScroll = document.getElementById("testScroll");
+    testScroll.scrollLeft = testScroll.scrollLeft + scrollValue;
+  };
+
+  const rightArrow = () => {
+    const testScroll = document.getElementById("testScroll");
+    testScroll.scrollLeft = testScroll.scrollLeft - scrollValue;
+  };
+
   return (
     <div className="contentHeader">
-      <button className="arrowBtn arrowLeft" title="Previous">
+      <button
+        onClick={leftArrow}
+        className="arrowBtn arrowLeft"
+        title="Previous"
+      >
         <FaChevronLeft />
       </button>
-      <div className="categoriesContainer">
+      <div id="testScroll" className="categoriesContainer">
         {Categories.map((category) => {
           return (
             <div
@@ -22,7 +38,7 @@ function ContentHeader() {
           );
         })}
       </div>
-      <button className="arrowBtn arrowRight" title="Next">
+      <button onClick={rightArrow} className="arrowBtn arrowRight" title="Next">
         <FaChevronRight />
       </button>
     </div>
