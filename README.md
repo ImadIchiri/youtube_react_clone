@@ -1,7 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). <br />
-Project [Link](https://ichiri-youtube-home.netlify.app/)
+
+# Project [Link](https://ichiri-youtube-home.netlify.app/)
 
 ## Available Scripts
 
